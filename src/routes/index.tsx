@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CODES } from "@/lib/codes";
 import { Studio } from "@/components/Studio";
+import markLogo from "@/assets/ru_logo.png.asset.json";
+import fullLogo from "@/assets/ryan_upscales_logo.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -30,7 +32,8 @@ function Index() {
     <div className="min-h-screen">
       <header className="sticky top-0 z-20 border-b border-border bg-background/80 backdrop-blur-md">
         <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-5 md:px-8">
-          <a href="#" className="flex items-baseline gap-2">
+          <a href="#" className="flex items-center gap-3">
+            <img src={markLogo.url} alt="Ryan Upscales" className="h-6 w-auto mix-blend-lighten" />
             <span className="font-display text-xl">Ryan Upscales</span>
             <span className="hidden font-mono text-[10px] text-muted-foreground sm:inline">v4</span>
           </a>
@@ -118,8 +121,8 @@ function Index() {
       </section>
 
       <footer className="border-t border-border">
-        <div className="mx-auto flex max-w-7xl flex-col justify-between gap-2 px-5 py-8 font-mono text-[11px] text-muted-foreground md:flex-row md:px-8">
-          <span>© {new Date().getFullYear()} Ryan Upscales</span>
+        <div className="mx-auto flex max-w-7xl flex-col justify-between gap-4 px-5 md:items-center py-8 font-mono text-[11px] text-muted-foreground md:flex-row md:px-8">
+          <span className="flex items-center gap-3"><img src={fullLogo.url} alt="Ryan Upscales logo" className="h-10 w-auto mix-blend-lighten" />© {new Date().getFullYear()}</span>
           <span>Generated detail is inferred, not recovered.</span>
         </div>
       </footer>
